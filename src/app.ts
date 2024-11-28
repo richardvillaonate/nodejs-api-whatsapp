@@ -2,7 +2,7 @@ import {addKeyword, createBot,createFlow,createProvider, MemoryDB} from '@bot-wh
 import {BaileysProvider, handleCtx} from '@bot-whatsapp/provider-baileys'
 
 const provider = createProvider(BaileysProvider)
-provider.initHttpServer(3008)
+provider.initHttpServer(3002)
 provider.http?.server.post('/message', handleCtx( async (bot,req,res)=>{
     const body=req.body
     const phone=body.phone
@@ -10,14 +10,14 @@ provider.http?.server.post('/message', handleCtx( async (bot,req,res)=>{
     const mediaUrl=body.mediaUrl
     
 
-    console.log(body)
+    // console.log(body)
    
 
     await bot.sendMessage(phone,message,{
         media:mediaUrl
     })
 
-    res.end()
+    res.end(true)
 
 }))
 
