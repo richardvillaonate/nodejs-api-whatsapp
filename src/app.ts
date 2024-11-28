@@ -17,7 +17,7 @@ provider.http?.server.post('/message', handleCtx( async (bot,req,res)=>{
         media:mediaUrl
     })
 
-    res.end(res)
+    res.end()
 
 }))
 
