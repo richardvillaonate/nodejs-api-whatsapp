@@ -13,11 +13,24 @@ provider.http?.server.post('/message', handleCtx( async (bot,req,res)=>{
     // console.log(body)
    
 
-    await bot.sendMessage(phone,message,{
-        media:mediaUrl
-    })
-
-    res.end(true)
+    try {
+        await bot.sendMessage(phone, message, {
+            media: mediaUrl
+        });
+    
+        res.status(200).json({
+            status: 'success',
+            message: 'Mensaje enviado correctamente',
+            phone: phone,
+            mediaUrl: mediaUrl
+        });
+    } catch (error) {
+        res.status(500).json({
+            status: 'error',
+            message: 'Hubo un problema al enviar el mensaje',
+            error: error.message
+        });
+    }
 
 }))
 
