@@ -21,7 +21,7 @@ provider.http?.server.post('/message', handleCtx( async (bot,req,res)=>{
 
 }))
 
-const flowBienvenida = addKeyword('Hola').addAnswer('bienvenido!');
+const flowBienvenida = addKeyword('Hola').addAnswer('bienvenid@!');
 
 const main = async()=>{
     await createBot({
