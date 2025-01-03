@@ -4,7 +4,7 @@ import {BaileysProvider, handleCtx} from '@bot-whatsapp/provider-baileys'
 const provider = createProvider(BaileysProvider)
 
 //cambiar puerto para el tenant 
-// casa23restobar puerto 3002
+// casa23restobar puerto 3002 casa
 provider.initHttpServer(3002)
 provider.http?.server.post('/message-with-image', handleCtx( async (bot, req, res) => {
     const body = req.body;
