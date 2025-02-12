@@ -37,7 +37,35 @@ provider.http?.server.post('/message-without-image', handleCtx( async (bot, req,
 }));
 
 
-const flowBienvenida = addKeyword(['hola', 'Hola', 'buenas', 'Buenas']).addAnswer('Hola quieres conocer nuestros productos?  https://taluu.app/pedidos/casa23 ');
+const flowBienvenida = addKeyword(['hola', 'Hola', 'buenas', 'Buenas'])
+    .addAnswer(
+        `¡Hola! 👋  
+
+Link para realizar pedido y ver menú ⬇  
+https://taluu.app/pedidos/casa23  
+
+Para cotizar tu evento ⬇  
+** Nombre:*  
+** Tipo de evento:*  
+** Fecha:*  
+** Hora:*  
+** Número de personas:*  
+** Celular:*  
+** Observaciones:*  
+
+📍 *Horarios*  
+
+*Lunes - Jueves*  
+  🕛 Día: 12:00 pm - 3:00 pm  
+  🌙 Noche: 6:00 pm - 10:00 pm  
+
+*Viernes - Sábado - Domingo*  
+  🕛 Día: 12:00 pm - 4:00 pm  
+  🌙 Noche: 6:00 pm - 11:00 pm  
+
+📍 Calle 7 # 11-99`
+    );
+
 
 const main = async()=>{
     await createBot({
