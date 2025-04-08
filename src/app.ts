@@ -28,7 +28,7 @@ provider.http?.server.post('/message-without-image', handleCtx( async (bot, req,
     const phone = body.phone;
     const message = body.message;
 
-    console.log(body);
+    // console.log(body);
 
     // Enviar solo el mensaje sin imagen
     await bot.sendMessage(phone, message, {});
